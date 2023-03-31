@@ -1,7 +1,7 @@
-const TEN_SEC = 10000
+const THIRTY_SEC = 30000
 
 Cypress.Commands.add('createUserNatura', (firstName, lastName, email, password, cpf, birth, gender, phone) => {
-    cy.get('input[name="firstName"]', { timeout : TEN_SEC }).type(firstName)
+    cy.get('input[name="firstName"]', { timeout : THIRTY_SEC }).type(firstName)
     cy.get('input[name="lastName"]').type(lastName)
     cy.get('input[name="email"]').type(email)
     cy.get('#password-field').type(password)
@@ -15,7 +15,7 @@ Cypress.Commands.add('createUserNatura', (firstName, lastName, email, password, 
 })
 
 Cypress.Commands.add('createUserAesop', (firstName, lastName, email, password, cpf, birth, gender, phone) => {
-    cy.get('input[name="firstName"]', { timeout : TEN_SEC }).type(firstName)
+    cy.get('input[name="firstName"]', { timeout : THIRTY_SEC }).type(firstName)
     cy.get('input[name="lastName"]').type(lastName)
     cy.get('input[name="email"]').type(email)
     cy.get('#password-field').type(password)
