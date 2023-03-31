@@ -1,13 +1,31 @@
-Cypress.Commands.add('createUserNatura', (firstName, lastName, email, password, cpf, birth, phone) => {
-    cy.get('input[name="firstName"]', { timeout : 10000 }).type(firstName)
+const TEN_SEC = 10000
+
+Cypress.Commands.add('createUserNatura', (firstName, lastName, email, password, cpf, birth, gender, phone) => {
+    cy.get('input[name="firstName"]', { timeout : TEN_SEC }).type(firstName)
     cy.get('input[name="lastName"]').type(lastName)
     cy.get('input[name="email"]').type(email)
     cy.get('#password-field').type(password)
     cy.get('#confirmPassword-field').type(password)
     cy.get('input[name="cpf"]').type(cpf)
     cy.get('input[name="dateOfBirth"]').type(birth)
-    cy.get('input[value="male"]').click()
+    cy.get('input[value="'+gender+'"]').click()
     cy.get('input[name="homePhone"]').type(phone)
     cy.get('#acceptedterms').click()
+    cy.get('button[type="submit"]').click()
+})
+
+Cypress.Commands.add('createUserAesop', (firstName, lastName, email, password, cpf, birth, gender, phone) => {
+    cy.get('input[name="firstName"]', { timeout : TEN_SEC }).type(firstName)
+    cy.get('input[name="lastName"]').type(lastName)
+    cy.get('input[name="email"]').type(email)
+    cy.get('#password-field').type(password)
+    cy.get('#confirmPassword-field').type(password)
+    cy.get('input[name="cpf"]').type(cpf)
+    cy.get('input[name="dateOfBirth"]').type(birth)
+    cy.get('input[value="'+gender+'"]').click()
+    cy.get('input[name="homePhone"]').type(phone)
+    cy.get('#receiveNewsLetter').click()
+    cy.get('#acceptedterms').click()
+    cy.get('#infContOptIn').click()
     cy.get('button[type="submit"]').click()
 })
