@@ -1,25 +1,13 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('createUserNatura', (firstName, lastName, email, password, cpf, birth, phone) => {
+    cy.get('input[name="firstName"]', { timeout : 10000 }).type(firstName)
+    cy.get('input[name="lastName"]').type(lastName)
+    cy.get('input[name="email"]').type(email)
+    cy.get('#password-field').type(password)
+    cy.get('#confirmPassword-field').type(password)
+    cy.get('input[name="cpf"]').type(cpf)
+    cy.get('input[name="dateOfBirth"]').type(birth)
+    cy.get('input[value="male"]').click()
+    cy.get('input[name="homePhone"]').type(phone)
+    cy.get('#acceptedterms').click()
+    cy.get('button[type="submit"]').click()
+})
