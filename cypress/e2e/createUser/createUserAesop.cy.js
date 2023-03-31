@@ -7,9 +7,10 @@ const options = { env : { snapshotOnly: true }}
 
 describe('Create User Aesop', options, () => {
     const THIRTY_SEC = 30000
+    const baseURL = 'https://www.aesop.com.br/'
 
     beforeEach(() => {
-        cy.visit('https://www.aesop.com.br/cadastre-se')
+        cy.visit(baseURL + 'cadastre-se')
         cy.viewport(1280, 880)
         cy.get('button[id*="accept"]', { timeout : THIRTY_SEC }).click()
     })
@@ -27,7 +28,7 @@ describe('Create User Aesop', options, () => {
         }
 
         cy.createUser(user.firstName, user.lastName, user.email, user.password, user.cpf, user.birth, user.gender, user.phone)
-        cy.url({ timeout : THIRTY_SEC }).should('to.be.equal', 'https://www.aesop.com.br/')
+        cy.url({ timeout : THIRTY_SEC }).should('to.be.equal', baseURL)
         cy.get('i[class*="navigation-menu"]').click()
         cy.get('div[class*="root"] > h6', { timeout : THIRTY_SEC }).should('have.text', 'Olá, ' + user.firstName)
     })
