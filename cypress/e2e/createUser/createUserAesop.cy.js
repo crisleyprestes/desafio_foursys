@@ -26,7 +26,7 @@ describe('Create User Aesop', options, () => {
             phone: faker.phone.number()
         }
 
-        cy.createUserAesop(user.firstName, user.lastName, user.email, user.password, user.cpf, user.birth, user.gender, user.phone)
+        cy.createUser(user.firstName, user.lastName, user.email, user.password, user.cpf, user.birth, user.gender, user.phone)
         cy.url({ timeout : THIRTY_SEC }).should('to.be.equal', 'https://www.aesop.com.br/')
         cy.get('i[class*="navigation-menu"]').click()
         cy.get('div[class*="root"] > h6', { timeout : THIRTY_SEC }).should('have.text', 'Olá, ' + user.firstName)
