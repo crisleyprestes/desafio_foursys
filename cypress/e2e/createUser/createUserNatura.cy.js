@@ -9,7 +9,7 @@ describe('Create User Natura', options, () => {
     const TEN_SEC = 10000
 
     beforeEach(() => {
-        cy.visit('/cadastre-se')
+        cy.visit('https://www.natura.com.br/cadastre-se')
         cy.viewport(1280, 880)
         cy.get('button[id*="accept"]', { timeout : TEN_SEC }).click()
     })
@@ -19,7 +19,7 @@ describe('Create User Natura', options, () => {
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
             email: faker.internet.email(),
-            password: faker.internet.password() + '@',
+            password: faker.internet.password(15) + '@',
             cpf: generate(),
             birth: faker.date.birthdate().toLocaleDateString('en-GB'),
             phone: faker.phone.number()
