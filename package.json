@@ -14,6 +14,8 @@
     "cypress": "^12.9.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "faker-br": "^0.4.1",
+    "gerador-validador-cpf": "^5.0.2"
   }
 }
