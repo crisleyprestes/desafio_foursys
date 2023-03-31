@@ -5,7 +5,7 @@ import { generate } from "gerador-validador-cpf"
 
 const options = { env : { snapshotOnly: true }}
 
-describe('Create User Natura', options, () => {
+describe('Create User Aesop', options, () => {
     const TEN_SEC = 10000
 
     beforeEach(() => {
