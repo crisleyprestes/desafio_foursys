@@ -1,7 +1,7 @@
+/// <reference types = "cypress" />
+
 import { faker } from "@faker-js/faker"
 import { generate } from "gerador-validador-cpf"
-
-/// <reference types = "cypress" />
 
 const options = { env : { snapshotOnly: true }}
 
