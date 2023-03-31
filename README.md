@@ -94,6 +94,8 @@ Bundled Node version:
 - Caso opte por executar os testes usando a GUI do Cypress, execute o comando abaixo no diretório raiz do projeto:
 <pre>npx cypress open</pre>
 
+- Na GUI do Cypress, selecione o browser e os testes que deseja executar.
+
 
 ## Implementação do Código
 
